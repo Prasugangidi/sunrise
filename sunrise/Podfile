@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'sunrise' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for sunrise
+  # pod 'SideMenu'
+  pod 'SJSwiftSideMenuController'
+  pod 'SDWebImage', '~> 4.0'
+  pod 'SwiftImageCarousel'
+  pod 'MRProgress', '~> 0.8'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Realm'
+  pod 'RealmSwift'
+  pod 'AXRatingView'
+target 'sunriseTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'sunriseUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

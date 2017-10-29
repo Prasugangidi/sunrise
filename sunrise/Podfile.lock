@@ -1,0 +1,65 @@
+PODS:
+  - AXRatingView (1.0.6)
+  - IQKeyboardManagerSwift (5.0.0)
+  - MRProgress (0.8.3):
+    - MRProgress/ActivityIndicator (= 0.8.3)
+    - MRProgress/Blur (= 0.8.3)
+    - MRProgress/Circular (= 0.8.3)
+    - MRProgress/Icons (= 0.8.3)
+    - MRProgress/NavigationBarProgress (= 0.8.3)
+    - MRProgress/Overlay (= 0.8.3)
+  - MRProgress/ActivityIndicator (0.8.3):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.3):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.3):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.3)
+  - MRProgress/Icons (0.8.3)
+  - MRProgress/NavigationBarProgress (0.8.3):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.3):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.3)
+  - MRProgress/Stopable (0.8.3):
+    - MRProgress/Helper
+  - Realm (2.10.1):
+    - Realm/Headers (= 2.10.1)
+  - Realm/Headers (2.10.1)
+  - RealmSwift (2.10.1):
+    - Realm (= 2.10.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+  - SJSwiftSideMenuController (0.1.4)
+  - SwiftImageCarousel (1.0.6)
+
+DEPENDENCIES:
+  - AXRatingView
+  - IQKeyboardManagerSwift
+  - MRProgress (~> 0.8)
+  - Realm
+  - RealmSwift
+  - SDWebImage (~> 4.0)
+  - SJSwiftSideMenuController
+  - SwiftImageCarousel
+
+SPEC CHECKSUMS:
+  AXRatingView: b975cd1a11c6c2e76c8999c166e089ed26f54133
+  IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
+  MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  Realm: fc7a317a5c2c9ba91f5f235ede4e2ea76e9eba0c
+  RealmSwift: 505ed6c15942a2e76f5cfa78a8667cfa997ee75b
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SJSwiftSideMenuController: 41f5558261bfdcc8754475ea0e3c08397ac0a079
+  SwiftImageCarousel: f92de101ff3186f6cbd792fd9ffa10361a7e08b6
+
+PODFILE CHECKSUM: c1322086301addf074d505fe90a70cd5fe4881e0
+
+COCOAPODS: 1.3.1
