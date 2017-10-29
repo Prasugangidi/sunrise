@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmptyCartWithoutLoginViewController: UIViewController  {
+class EmptyCartWithoutLoginViewController: BaseViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()

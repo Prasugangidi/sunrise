@@ -15,7 +15,7 @@ enum OpenViewType {
     case technology
 }
 
-class ProductDetailViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , ProductsScrollTableViewCellDelegate , DetailsAndReviewsTableViewCellDelegate{
+class ProductDetailViewController: BaseViewController , UITableViewDelegate , UITableViewDataSource , ProductsScrollTableViewCellDelegate , DetailsAndReviewsTableViewCellDelegate{
     
     var productModel : [String : AnyObject] = [:]
     var productDetails : [String : AnyObject] = [:]
@@ -31,15 +31,6 @@ class ProductDetailViewController: UIViewController , UITableViewDelegate , UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let ShoppingImage   = UIImage(named: "Shopping")!
-        let searchImage = UIImage(named: "Search")!
-        let ShoppingButton   = UIBarButtonItem(image: ShoppingImage, style: .plain, target: self, action: Selector(("didTapShoppingButton:")))
-        let SearchButton = UIBarButtonItem(image: searchImage,  style: .plain, target: self, action: Selector(("didTapSearchButton:")))
-        navigationItem.rightBarButtonItems = [ShoppingButton, SearchButton]
-        self.navigationController?.navigationBar.tintColor = UIColor.black;
-        self.title = "SUNRISECLICK"
         
         // Do any additional setup after loading the view.
         

@@ -8,7 +8,7 @@ target 'sunrise' do
   # Pods for sunrise
   # pod 'SideMenu'
   pod 'SJSwiftSideMenuController'
-  pod 'SDWebImage', '~> 4.0'
+  pod 'SDWebImage'
   pod 'SwiftImageCarousel'
   pod 'MRProgress', '~> 0.8'
   pod 'IQKeyboardManagerSwift'

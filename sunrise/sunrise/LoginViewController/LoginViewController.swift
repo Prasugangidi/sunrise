@@ -9,7 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 
-class LoginViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource  {
+class LoginViewController: BaseViewController ,UITableViewDelegate , UITableViewDataSource  {
     
   
     @IBOutlet weak var loginTableView: UITableView!

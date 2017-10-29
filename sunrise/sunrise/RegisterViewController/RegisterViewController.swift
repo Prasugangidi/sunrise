@@ -12,7 +12,7 @@ import SJSwiftSideMenuController
 import Realm
 import RealmSwift
 
-class RegisterViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource , UserRegisterTableViewCellDelegate{
+class RegisterViewController: BaseViewController ,UITableViewDelegate , UITableViewDataSource , UserRegisterTableViewCellDelegate{
     
     
     @IBOutlet weak var registerTableView: UITableView!

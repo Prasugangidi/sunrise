@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A9447352B8A034191C268CF2 /* Pods_sunrise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A72864FA65E0CCCF5D343E /* Pods_sunrise.framework */; };
+		A9992CEE1FA649320099FA85 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9992CED1FA649320099FA85 /* BaseViewController.swift */; };
 		B90EB9051F762A6C00F8AD7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EB9041F762A6C00F8AD7E /* AppDelegate.swift */; };
 		B90EB9071F762A6C00F8AD7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EB9061F762A6C00F8AD7E /* ViewController.swift */; };
 		B90EB90A1F762A6C00F8AD7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90EB9081F762A6C00F8AD7E /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		409B573C1007C8378EA137E4 /* Pods_sunriseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sunriseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4226AD8B6B7D654302AF62D6 /* Pods-sunriseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunriseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sunriseTests/Pods-sunriseTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E86731329DD6D8106E914AE /* Pods-sunrise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunrise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sunrise/Pods-sunrise.debug.xcconfig"; sourceTree = "<group>"; };
+		A9992CED1FA649320099FA85 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B90EB9011F762A6C00F8AD7E /* sunrise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunrise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90EB9041F762A6C00F8AD7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B90EB9061F762A6C00F8AD7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9992CEC1FA649210099FA85 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9992CED1FA649320099FA85 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
 		B90EB8F81F762A6C00F8AD7E = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +189,7 @@
 		B90EB9031F762A6C00F8AD7E /* sunrise */ = {
 			isa = PBXGroup;
 			children = (
+				A9992CEC1FA649210099FA85 /* BaseViewController */,
 				B9F4A6041FA44299005419BF /* CartEmptyAfterLogin */,
 				B9F4A5F81FA04867005419BF /* Cart */,
 				B9F1CFF11F9B1B270006F3C5 /* RealmDatabase */,
@@ -656,6 +667,7 @@
 				B9F4A6081FA442E0005419BF /* CartEmptyAfterLoginTableViewCell.swift in Sources */,
 				B9F1CFFB1F9D81F60006F3C5 /* RegisterNowTableViewCell.swift in Sources */,
 				B9F4A5F71F9FA416005419BF /* DetailsAndReviewsTableViewCell.swift in Sources */,
+				A9992CEE1FA649320099FA85 /* BaseViewController.swift in Sources */,
 				B90EB93E1F769E3A00F8AD7E /* VideosTableViewCell.swift in Sources */,
 				B97DF8E91F87DF6300065284 /* ProductTableViewCell.swift in Sources */,
 				B93F379C1F77DC5600D9F9A5 /* CourosalTableViewCell.swift in Sources */,

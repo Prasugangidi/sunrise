@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShoppingListViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource , ProductTableViewCellDelegate{
+class ShoppingListViewController: BaseViewController ,UITableViewDelegate ,UITableViewDataSource , ProductTableViewCellDelegate{
     
     @IBOutlet weak var shoppingListTableView: UITableView!
     var sourceType : String!
@@ -19,17 +19,6 @@ class ShoppingListViewController: UIViewController ,UITableViewDelegate ,UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let ShoppingImage   = UIImage(named: "Shopping")!
-        let searchImage = UIImage(named: "Search")!
-        
-        let ShoppingButton   = UIBarButtonItem(image: ShoppingImage, style: .plain, target: self, action: Selector(("didTapShoppingButton:")))
-        let SearchButton = UIBarButtonItem(image: searchImage,  style: .plain, target: self, action: Selector(("didTapSearchButton:")))
-        navigationItem.rightBarButtonItems = [ShoppingButton, SearchButton]
-        self.navigationController?.navigationBar.tintColor = UIColor.black;
-        
-        
-        self.title = "SUNRISECLICK"
         
         shoppingListTableView.delegate = self
         shoppingListTableView.dataSource = self
