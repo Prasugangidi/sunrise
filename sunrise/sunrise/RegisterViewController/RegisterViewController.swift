@@ -131,13 +131,13 @@ class RegisterViewController: BaseViewController ,UITableViewDelegate , UITableV
             }
             
         }, failure: { (error) -> Void in
-            print(error)
             
         })
     }
     
     func showSalePage()
     {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UserActivity"), object: nil, userInfo: nil)
         let shoppingListVC : ShoppingListViewController = (self.storyboard!.instantiateViewController(withIdentifier: "ShoppingListViewController") as? ShoppingListViewController)!
         shoppingListVC.sourceType = "SALE"
          SJSwiftSideMenuController.pushViewController(shoppingListVC, animated: true)

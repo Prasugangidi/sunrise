@@ -61,50 +61,44 @@ class DetailsAndReviewsTableViewCell: UITableViewCell {
         }
         
         reviewScrollView.contentSize = CGSize(width: self.reviewScrollView.frame.size.width , height: CGFloat(goods_reviews.count * 100))
-        var xChod : CGFloat = 5
         var yChod : CGFloat = 0
         for i in 0..<goods_reviews.count {
             let reviewInfo = goods_reviews[i]
             
-            let reviewView = UIView(frame: CGRect(x: 0, y: yChod, width: self.reviewScrollView.frame.size.width, height: 100))
+            let reviewView = UIView(frame: CGRect(x: 20, y: yChod, width: self.reviewScrollView.frame.size.width, height: 100))
             reviewView.backgroundColor = UIColor.lightGray
             
+            if i % 2 == 0
+            {
+              reviewView.backgroundColor = UIColor.lightGray
+            }
+            else
+            {
+               reviewView.backgroundColor = UIColor.white
+            }
             
+            let ratingView = AXRatingView(frame: CGRect(x: 5, y: 2, width: 100, height: 20))
+            reviewView.addSubview(ratingView)
             
-            
-            let nameLbl = UILabel(frame: CGRect(x: 130, y: 2, width: self.reviewScrollView.frame.size.width-10, height: 20))
+            let nameLbl = UILabel(frame: CGRect(x: 115, y: 2, width: self.reviewScrollView.frame.size.width-120, height: 20))
             nameLbl.text =  reviewInfo["title"] as? String
             nameLbl.text = nameLbl.text?.lowercased()
             nameLbl.font = UIFont(name: "Arial-BoldMT", size: 16)
             nameLbl.textAlignment = .left
             reviewView.addSubview(nameLbl)
             
-            let userLbl = UILabel(frame: CGRect(x: 5, y: 25, width: self.reviewScrollView.frame.size.width-10, height: 20))
-            userLbl.text =  reviewInfo["user_name"] as? String
-            userLbl.text = userLbl.text?.lowercased()
-            userLbl.font = UIFont(name: "Arial-BoldMT", size: 16)
-            userLbl.textAlignment = .left
-            reviewView.addSubview(userLbl)
-            
-            let timeLbl = UILabel(frame: CGRect(x: 130, y: 25, width: self.reviewScrollView.frame.size.width-10, height: 20))
-            timeLbl.text =  reviewInfo["add_time"] as? String
+            let timeLbl = UILabel(frame: CGRect(x: 5, y: 25, width: self.reviewScrollView.frame.size.width-10, height: 20))
+            timeLbl.text = "\(reviewInfo["user_name"] as! String) on \(reviewInfo["add_time"] as! String)"
             timeLbl.text = timeLbl.text?.lowercased()
             timeLbl.font = UIFont(name: "Arial-BoldMT", size: 16)
             timeLbl.textAlignment = .left
             reviewView.addSubview(timeLbl)
             
-            let onLbl = UILabel(frame: CGRect(x: 110, y: 25, width: self.reviewScrollView.frame.size.width-10, height: 20))
-            onLbl.text = "on"
-            onLbl.font = UIFont(name: "Arial-BoldMT", size: 16)
-            onLbl.textAlignment = .left
-            reviewView.addSubview(onLbl)
-            
-            
-            let categoryLbl = UILabel(frame: CGRect(x: 5, y: 45, width: self.reviewScrollView.frame.size.width-10, height: 30))
+            let categoryLbl = UILabel(frame: CGRect(x: 5, y: 45, width: self.reviewScrollView.frame.size.width-10, height: 60))
             categoryLbl.text =  reviewInfo["content"] as? String
             categoryLbl.font = UIFont(name: "ArialMT", size: 16)
-            categoryLbl.numberOfLines = 6
             categoryLbl.textAlignment = .left
+            categoryLbl.numberOfLines = 0
             reviewView.addSubview(categoryLbl)
            // self.scrollView.addSubview(categoryLbl)
             

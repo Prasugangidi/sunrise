@@ -123,8 +123,7 @@ class ShoppingListViewController: BaseViewController ,UITableViewDelegate ,UITab
         if indexPath.section == 0 {
             return 80
         }
-        
-        return 380
+        return (self.view.frame.size.width)*0.45 + 180
     }
     
     func leftImageSelectedWithIndexPath(indexPath : IndexPath)

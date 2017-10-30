@@ -19,6 +19,8 @@ class SideMenuViewController: UIViewController , UITableViewDelegate , UITableVi
     var responseArray : [[String : AnyObject]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = true
         if !isSubMenu {
             getSideMenuData()
         }
@@ -29,14 +31,43 @@ class SideMenuViewController: UIViewController , UITableViewDelegate , UITableVi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if isSubMenu {
-            self.navigationController?.isNavigationBarHidden = false
-        }
-        else
-        {
-            self.navigationController?.isNavigationBarHidden = true
-        }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(SideMenuViewController.refreshData), name: NSNotification.Name(rawValue: "UserActivity"), object: nil)
+        
+        self.refreshData()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func getSideMenuData()
+    {
+        ConnectionManager.getMenu(complection: { (responseArray) in
+            print(responseArray)
+            self.responseArray = responseArray!
+            self.menuArray = responseArray!
+            self.refreshData()
+
+            DispatchQueue.main.async {
+                self.sideMenuTableView.reloadData()
+            }
+            
+        }, failure: { (error) -> Void in
+            
+        })
+    }
+    
+    @objc func refreshData()
+    {
         if !isSubMenu {
             self.menuArray.removeAll()
             self.menuArray.append(contentsOf: self.responseArray)
@@ -55,36 +86,26 @@ class SideMenuViewController: UIViewController , UITableViewDelegate , UITableVi
         self.sideMenuTableView.reloadData()
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-       
-        
-    }
-    
-    func getSideMenuData()
-    {
-        ConnectionManager.getMenu(complection: { (responseArray) in
-            print(responseArray)
-            self.responseArray = responseArray!
-            self.menuArray = responseArray!
-            self.menuArray.append(["name" : "REGISTER" as AnyObject])
-            self.menuArray.append(["name" : "SIGN IN" as AnyObject])
-
-            DispatchQueue.main.async {
-                self.sideMenuTableView.reloadData()
-            }
-            
-        }, failure: { (error) -> Void in
-            
-        })
-    }
-    
     // MARK UItableview datasource methods
+    
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        if self.isSubMenu
+        {
+            return 2
+        }
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if self.isSubMenu
+        {
+            if section == 0
+            {
+                return 1
+            }
+        }
         return menuArray.count
     }
     
@@ -96,15 +117,20 @@ class SideMenuViewController: UIViewController , UITableViewDelegate , UITableVi
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
             cell?.backgroundColor = UIColor.black
             cell?.selectionStyle = .none
+            cell?.textLabel?.textColor = UIColor.white
+            cell?.textLabel?.font = UIFont(name:"Bold", size:13)
         }
-        
+        if self.isSubMenu
+        {
+            if indexPath.section == 0
+            {
+                 cell?.textLabel?.text = "BACK"
+                return cell!
+            }
+        }
        var sideItem = menuArray[indexPath.row]
         let name  = sideItem["name"] as? String
         cell?.textLabel?.text = name
-        cell?.textLabel?.textColor = UIColor.white
-        cell?.textLabel?.font = UIFont(name:"Bold", size:13)
-        
-        
     
         if indexPath.row == 10{
             cell?.backgroundColor = UIColor.gray
@@ -121,6 +147,14 @@ class SideMenuViewController: UIViewController , UITableViewDelegate , UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        if self.isSubMenu
+        {
+            if indexPath.section == 0
+            {
+                self.navigationController?.popViewController(animated: true)
+                return
+            }
+        }
         let sideItem = menuArray[indexPath.row]
         if let subMenu : [[String : AnyObject]] =  sideItem["sub_menu"] as? [[String : AnyObject]]{
             if subMenu.count > 0

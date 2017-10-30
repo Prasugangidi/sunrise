@@ -229,7 +229,7 @@ class ProductDetailViewController: BaseViewController , UITableViewDelegate , UI
             return 250
         }
         if indexPath.section == 1 {
-            return 320
+            return 325
         }
         if indexPath.section == 2 {
             
